@@ -1,14 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './App.css';
-import { Route, Router } from 'react-router';
-import Dashboard from './Dashboard';
+import Dashboard from './Dashboard'
 
-function App() {
-  return (
-    <Router>
-    <Route path='/' component={Dashboard} />
-    </Router>
-  );
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+
+export default class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+    }
+  }
+
+  render() {
+    return (
+      <Router>
+      <Route path="/:to/:amount" component={Dashboard}/>
+      </Router>
+    );
+  }
 }
-
-export default App;
